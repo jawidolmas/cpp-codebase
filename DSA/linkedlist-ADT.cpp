@@ -132,7 +132,45 @@ void linkedlist::insert(int index, int data){
 }
 
 
-
+void linkedlist::remove(int index){
+    int x;
+    if(index < 0 || index > length()){
+        std::cout << "Invalid index\n";
+        return;
+    }
+    if(isEmpty()){
+        std::cout << "List is empty\n";
+        return;
+    }
+    node *temp = head;
+    if(index == 0){
+        if(head->next == nullptr){
+            x = head->data;
+            delete head;
+            head = nullptr;
+        }else{
+            head = head->next;
+            x = temp->data;
+            delete temp;
+            temp = nullptr;
+        }
+    }else{
+        node *p = nullptr;
+        
+        for(int i = 0; i<index-1; i++){
+            p = temp;
+            temp = temp->next;
+            
+        }
+        if(temp){
+            p->next = temp->next;
+            x = temp->data;
+            delete temp;
+            temp = nullptr;
+        }
+    }
+    std::cout << "Value " << x << " deleted\n";
+}
 
 
 
@@ -147,6 +185,7 @@ int main()
     l1.create(17);
     l1.insert(0,14);
     l1.insert(4, 20);
+    l1.remove(5);
     l1.display();
     std::cout << l1.search(20);
 }
