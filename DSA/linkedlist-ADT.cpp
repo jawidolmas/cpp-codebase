@@ -19,7 +19,7 @@ class linkedlist{
         void display() const;
         int search(int key) const;
         void insert(int index, int data);
-        void remove(int data);
+        void remove(int index);
 };
 
 linkedlist::linkedlist(){
@@ -170,6 +170,9 @@ void linkedlist::remove(int index){
         }
     }
     std::cout << "Value " << x << " deleted\n";
+    
+
+
 }
 
 
@@ -189,3 +192,6 @@ int main()
     l1.display();
     std::cout << l1.search(20);
 }
+
+
+
