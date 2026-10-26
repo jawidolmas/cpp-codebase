@@ -19,8 +19,8 @@ class Transaction{
                                  amount(amount) 
       {}
       std::string getDate() const;
-      void getCatagory() const;
-      void getNote() const;
+      std::string getCatagory() const;
+      std::string getNote() const;
       double getAmount() const;
       bool isIncome() const;
       void print() const; 

@@ -6,12 +6,12 @@ std::string Transaction::getDate() const{
     return date;
 }
 
-void Transaction::getCatagory() const{
-  std::cout << catagory << std::endl;
+std::string Transaction::getCatagory() const{
+    return catagory;
 }
 
-void Transaction::getNote() const{
-  std::cout << note << std::endl;
+std::string Transaction::getNote() const{
+    return note;
 }
 
 double Transaction::getAmount() const{
