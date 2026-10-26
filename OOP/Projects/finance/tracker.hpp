@@ -7,7 +7,7 @@ class Tracker{
   private:
     std::vector<Transaction> records;
   public:
-    void add(const Transaction& transaction);
+    void add(const Transaction& t);
     void printAll() const;
     double totalBalance() const;
     size_t count() const;

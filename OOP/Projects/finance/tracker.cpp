@@ -1,17 +1,30 @@
 #include "tracker.hpp"
 
-void Tracker::add(const Transaction& transaction){
-    records.push_back(transaction);
+void Tracker::add(const Transaction& t){
+    records.push_back(t);
 }
 
 void Tracker::printAll() const{
-    if(records.size() == 0){
+    if(records.empty()){
       std::cout << "No records found\n";
       return;
     }
-    for(int i = 1; i<records.size(); i++){
-      std::cout << i << " \n";
+    int n = 1;
+    for(const auto& t : records){
+        std::cout << n << ". ";
+        t.print();
+        n++;
     }
 }
 
-  
+double Tracker::totalBalance() const{
+    double sum = 0.0;
+    for(const auto& t : records){
+        sum += t.getAmount();
+    }
+    return sum;
+}
+
+size_t Tracker::count() const{
+    return records.size();
+}
