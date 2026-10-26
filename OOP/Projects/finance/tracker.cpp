@@ -28,3 +28,9 @@ double Tracker::totalBalance() const{
 size_t Tracker::count() const{
     return records.size();
 }
+
+void Tracker::sortDate(){
+    std::sort(records.begin(), records.end(), [](const auto& a, const auto& b){
+        return a.getDate() < b.getDate();   
+    });
+}

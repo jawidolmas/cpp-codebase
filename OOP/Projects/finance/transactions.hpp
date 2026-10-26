@@ -18,7 +18,7 @@ class Transaction{
                                  note(note),
                                  amount(amount) 
       {}
-      void getDate() const;
+      std::string getDate() const;
       void getCatagory() const;
       void getNote() const;
       double getAmount() const;

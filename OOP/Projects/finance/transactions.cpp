@@ -2,8 +2,8 @@
 #include "transactions.hpp"
 
 
-void Transaction::getDate() const{
-  std::cout << date << std::endl;
+std::string Transaction::getDate() const{
+    return date;
 }
 
 void Transaction::getCatagory() const{

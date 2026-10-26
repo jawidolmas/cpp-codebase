@@ -1,7 +1,9 @@
 #pragma once
 #include <iostream>
 #include<vector>
+#include<algorithm>
 #include "transactions.hpp"
+
 
 class Tracker{
   private:
@@ -11,6 +13,7 @@ class Tracker{
     void printAll() const;
     double totalBalance() const;
     size_t count() const;
+    void sortDate();
 };
 
 
