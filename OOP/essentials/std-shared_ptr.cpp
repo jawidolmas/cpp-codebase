@@ -1,5 +1,5 @@
 #include<iostream>
-#include<memory>        // shared_ptr
+#include<memory>        // shared_ptr && week_ptr
 
 
 /*  
@@ -50,3 +50,25 @@ int main()
 
 
 
+
+
+/*
+    week_ptr
+
+    A week pointer is a pointer that is non-owning. so it cannot own a resource as shared or unique does. for example it is impossible we do std::week_ptr<udt> week = std::make_week<udt>();
+    Also, a week pointer cannot increment the resource count. so use_count() will be same even if we point to the resoruce with million of week pointers. it will not increment. 
+
+    Also, week_ptr cannot own an object so they also have no role in life time of an object. it depends of shared_ptr. 
+
+    example: 
+    std::shared_ptr<udt> owner = std::make_shared<udt>();
+
+    std::week_ptrudt> ptr1 = owner;
+    std::week_ptrudt> ptr2 = ptr1;
+
+    In here, ptr1 and ptr2 will not increase the use_count().
+    ptr1 and ptr2 cannout own the udt. 
+    IMPORTNAT: The life time of udt is belong to owner. if owner destroyed, ptr1 and ptr2 will be dangling and they cannot access any data in resource. coz  resource is destroyed. 
+
+
+*/
